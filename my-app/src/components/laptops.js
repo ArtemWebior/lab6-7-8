@@ -1,25 +1,11 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Button from "./Button";
-import useFetchLaptops from "../FetchLaptop";
+import laptops from "./laptop_data";
 
-const Laptops = ({data, limit }) => {
-    const { laptops, loading, error } = useFetchLaptops(); 
-    const navigate = useNavigate();
+const Laptops = ({ data=laptops, limit }) => {
     const location = useLocation();
-
-    const laptopData = data || laptops
-
-    const handleViewMoreClick = (id) => {
-        navigate(`/laptops/${id}`);
-    };
-
-    const displayedData = limit ? laptopData.slice(0, limit) : laptopData;
-
-
-    if (error) {
-        return <p>Помилка: {error}</p>;
-    }
+    const displayedData = limit ? data.slice(0, limit) : data;
 
     return (
         <ul className="items-container">
@@ -35,13 +21,15 @@ const Laptops = ({data, limit }) => {
                                     <p className="txt-price">Price: </p>
                                     <p className="price-laptop">{`${laptop.price} грн`}</p>
                                 </div>
-                                <Button className="view-more-btn" text="View more" onClick={() => handleViewMoreClick(laptop._id)}/>
+                                <Link className="link" to={`/item-page/${laptop.id}`}>
+                                    <Button className="view-more-btn" text="View more" />
+                                </Link>
                             </>
                         )}
                     </li>
                 ))
             ) : (
-                <p className="txt-no-found"></p>
+                <p className="txt-no-found">No laptops found</p>
             )}
         </ul>
     );

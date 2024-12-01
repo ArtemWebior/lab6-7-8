@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from "react";
-import Laptops from "./laptops"; 
+import React, { useState } from "react";
+import Laptops from "./laptops";
 import Button from "./Button";
-import useFetchLaptops from "../FetchLaptop";
+import laptops from "./laptop_data";
 
 const Catalog = () => {
     const [visibleCount, setVisibleCount] = useState(4);
-    const { laptops, loading, error } = useFetchLaptops();
 
     const viewMore = () => {
         setVisibleCount(visibleCount + 4);
     }
-
     const hideCards = () => {
         setVisibleCount(4);
     };
-
-    if (loading) {
-        return <p className="load">Завантаження...</p>;
-    }
-
-    if (error) {
-        return <p>Помилка: {error}</p>;
-    }
 
     return (
         <div>

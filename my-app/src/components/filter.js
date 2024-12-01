@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Select } from 'antd';
 import Button from "./Button";
 
-const Filter = ({ onSort, onApply }) => {
+const Filter = ({ onSort }) => {
     const [selectedValue, setSelectedValue] = useState("Filter 1");
     
     const handleChange = (value) => {
@@ -10,10 +10,7 @@ const Filter = ({ onSort, onApply }) => {
     }
 
     const handleApply = () => {
-        if (selectedValue) {
-            onSort(selectedValue);
-            onApply();
-        }
+        onSort(selectedValue)
     }
     
     return (

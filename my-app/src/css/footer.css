@@ -1,6 +1,6 @@
 footer {
     background-color: #2c3e50;
-    padding: 10px 0; 
+    padding: 10px 0;  
     color: #ecf0f1;
 }
 
@@ -25,7 +25,7 @@ footer {
 .logo {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 5px; 
+    margin-bottom: 5px;  
 }
 
 .footer-txt {
@@ -46,12 +46,12 @@ footer {
 .footer-hr {
     border: none;
     border-top: 1px solid #bdc3c7;
-    margin: 10px 40px; 
+    margin: 10px 40px;  
 }
 
 .txt-p {
     font-size: 12px;
     text-align: center;
     color: #bdc3c7;
-    margin-top: 5px; 
+    margin-top: 5px;  
 }

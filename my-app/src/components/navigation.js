@@ -12,7 +12,7 @@ const Navigation = ({ onSearch }) => {
 
     return (
         <nav className="navigation">
-            <h1 className="nav-title">RozetkaLaptops</h1>
+            <h1 className="nav-title">TimberPro</h1>
             <ul>
                 <li>
                     <Link className="link" to="/">Home</Link>
@@ -20,9 +20,7 @@ const Navigation = ({ onSearch }) => {
                 <li>
                     <Link className="link" to="/catalog">Catalog</Link>
                 </li>
-                <li>
-                <Link className="link" to="/cart">Cart</Link>
-                </li>
+                <li>Cart</li>
             </ul>
             {location.pathname === '/catalog' && (
             <div className="search-container">
